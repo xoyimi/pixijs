@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn PixiJS</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+
+<script src="./js/pixi.js"></script>
+<script>
+    let type = "WebGL"
+    if (!PIXI.utils.isWebGLSupported()) {
+        type = "canvas"
+    }
+    let app = new PIXI.Application({
+            width: innerWidth,         // default: 800
+            height: innerHeight,        // default: 600
+            antialias: true,    // default: false
+            transparent: false, // default: false
+            resolution: 1       // default: 1
+        }
+    );
+    document.body.appendChild(app.view);
+    app.renderer.view.style.position = "absolute";
+    app.renderer.view.style.display = "block";
+    app.renderer.autoResize = true;
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+    app.renderer.backgroundColor = 0x061639;
+    console.log(app.stage)
+</script>
+</body>
+</html>
